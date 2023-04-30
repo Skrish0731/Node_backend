@@ -66,4 +66,6 @@ const server = http.createServer((req, res) => {
 
 });
 
-server.listen(4343, () => console.log("Our server is running"));
+const PORT = process.env.PORT || 4304;
+server.listen(PORT,()=> console.log(`Great our server is working ${PORT}`)) 
+
