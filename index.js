@@ -15,11 +15,16 @@ const server = http.createServer((req, res) => {
         });
     } else if (req.url === '/api') {
         // Serve the Vue.js application file
-        fs.readFile(path.join(__dirname, 'public','db.json'), (err, content) => {
+        fs.readFile(path.join(__dirname, 'public', 'db.json'), (err, content) => {
             if (err) throw err;
-            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.writeHead(200, { 
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': 'http://localhost:8080'
+            });
             res.end(content);
         });
+    
+
     } else {
         // Serve static files for the main website
         const filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url);
