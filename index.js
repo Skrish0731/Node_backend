@@ -71,8 +71,8 @@ const server = http.createServer((req, res) => {
 
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3108;
 
 server.listen(port, () => {
-  console.log(`Our server is running on port ${port}`);
+  console.log(`Our server is running osn port ${port}`);
 });
